@@ -1,109 +1,38 @@
-
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="310" viewBox="0 0 900 310" role="img" aria-labelledby="title desc">
-  <title id="title">PhaseSpider profile analysis</title>
-  <desc id="desc">An animated Linux terminal runs Ghidra headless analysis and recovers the identity Gabriel Santana, alias PhaseSpider.</desc>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="220" viewBox="0 0 840 220" role="img" aria-labelledby="title desc">
+  <title id="title">Research terminal: comparing candidate lists</title>
+  <desc id="desc">A real Python command compares synthetic lists. Three candidates before, five after, four new, two gone and one unchanged.</desc>
   <defs>
-    <linearGradient id="shell" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#070B14"/>
-      <stop offset="0.55" stop-color="#0B1020"/>
-      <stop offset="1" stop-color="#101529"/>
+    <linearGradient id="edge" x2="1" y2="1">
+      <stop stop-color="#435377"/>
+      <stop offset="1" stop-color="#262d41"/>
     </linearGradient>
-    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#8B5CF6"/>
-      <stop offset="0.5" stop-color="#22D3EE"/>
-      <stop offset="1" stop-color="#8B5CF6"/>
-    </linearGradient>
-    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
-      <path d="M0 3.5H4" stroke="#FFFFFF" stroke-opacity="0.018"/>
-    </pattern>
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <clipPath id="typed-command">
-      <rect x="36" y="55" width="815" height="24">
-        <animate attributeName="width" dur="15s" repeatCount="indefinite"
-          values="0;0;815;815;0" keyTimes="0;0.02;0.19;0.94;1"/>
-      </rect>
-    </clipPath>
+    <style>
+      text { font-family: 'DejaVu Sans Mono', 'Liberation Mono', monospace; }
+      @keyframes type { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+      @keyframes show { from { opacity: 0; } to { opacity: 1; } }
+      @media (prefers-reduced-motion: no-preference) {
+        .command { animation: type 1.65s steps(64, end) .2s both; }
+        .first { animation: show .01s step-end 2s both; }
+        .second { animation: show .01s step-end 2.12s both; }
+        .third { animation: show .01s step-end 2.24s both; }
+        .fourth { animation: show .01s step-end 2.36s both; }
+      }
+    </style>
   </defs>
-
-  <rect x="2" y="2" width="896" height="306" rx="12" fill="url(#shell)" stroke="url(#frame)" stroke-width="2"/>
-  <rect x="3" y="3" width="894" height="34" rx="10" fill="#111827"/>
-  <path d="M3 27V37H897V27" fill="#111827"/>
-  <circle cx="22" cy="20" r="5" fill="#FF5F57"/>
-  <circle cx="40" cy="20" r="5" fill="#FEBC2E"/>
-  <circle cx="58" cy="20" r="5" fill="#28C840"/>
-  <text x="450" y="24" text-anchor="middle" fill="#94A3B8" font-family="'Courier New', 'Liberation Mono', monospace" font-size="12" letter-spacing="1">ghidra-headless • phase@spider</text>
-
-  <!-- A restrained web motif ties the professional terminal to the PhaseSpider identity. -->
-  <g fill="none" stroke="#8B5CF6" stroke-opacity="0.10" stroke-width="1">
-    <path d="M900 38L760 178M900 38L820 215M900 38L875 230"/>
-    <path d="M858 80Q887 97 891 126"/>
-    <path d="M823 115Q873 142 882 181"/>
-    <path d="M787 151Q852 184 873 232"/>
+  <rect x="1" y="1" width="838" height="218" rx="12" fill="#0b101b" stroke="url(#edge)" stroke-width="2"/>
+  <path d="M13 2h814a11 11 0 0 1 11 11v23H2V13A11 11 0 0 1 13 2Z" fill="#171f30"/>
+  <path d="M2 36h836" stroke="#303a53"/>
+  <circle cx="21" cy="19" r="3.5" fill="#fc8794"/>
+  <circle cx="34" cy="19" r="3.5" fill="#f6ca84"/>
+  <circle cx="47" cy="19" r="3.5" fill="#79d9ad"/>
+  <text x="66" y="23" font-size="12" fill="#b5c0d6">~/CE-Malware-Obfuscation</text>
+  <text x="811" y="23" text-anchor="end" font-size="11" letter-spacing="1" fill="#b5c0d6">RESEARCH DEMO</text>
+  <g font-size="16">
+    <text x="24" y="70" fill="#7de3cc">$</text>
+    <text x="46" y="70" class="command" fill="#eef2fa">python scripts/comparar_candidatos.py examples/par_ficticio.json</text>
+    <text x="24" y="107" class="first" fill="#f6ca84">EXEMPLO FICTICIO - nao e resultado de malware.</text>
+    <text x="24" y="133" class="second" fill="#a4b4cd">Amostra: FICTICIA_01 | Ferramenta: simulada</text>
+    <text x="24" y="161" class="third" fill="#7de3cc">Antes: 3 | Depois: 5 | Diferenca: +2</text>
+    <text x="24" y="188" class="fourth" fill="#e0e8f7">Novos: 4 | Deixaram de aparecer: 2 | Continuaram: 1</text>
   </g>
-
-  <g font-family="'Courier New', 'Liberation Mono', monospace" font-size="14">
-    <g clip-path="url(#typed-command)">
-      <text x="36" y="70" fill="#22D3EE" filter="url(#glow)">phase@spider</text>
-      <text x="146" y="70" fill="#64748B">:</text>
-      <text x="154" y="70" fill="#A78BFA">~</text>
-      <text x="166" y="70" fill="#CBD5E1">$ analyzeHeadless /tmp/profile PhaseSpider -import gabriel.bin</text>
-    </g>
-
-    <text x="36" y="104" fill="#94A3B8" opacity="1">INFO  Loading program: gabriel.bin
-      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.21;0.22;0.94;1"/>
-    </text>
-    <text x="36" y="130" fill="#94A3B8" opacity="1">INFO  Auto-analysis enabled
-      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.29;0.30;0.94;1"/>
-    </text>
-    <text x="36" y="156" fill="#94A3B8" opacity="1">INFO  Recovering symbols...
-      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.37;0.38;0.94;1"/>
-    </text>
-
-    <text x="36" y="194" fill="#4ADE80" opacity="1">PASS
-      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.46;0.47;0.94;1"/>
-    </text>
-    <text x="252" y="194" fill="#F8FAFC" font-weight="700" opacity="1">Gabriel Santana
-      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.46;0.47;0.94;1"/>
-    </text>
-    <g opacity="1">
-      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.46;0.47;0.94;1"/>
-      <text x="82" y="194" fill="#CBD5E1">identity.name</text>
-      <text x="222" y="194" fill="#64748B">-&gt;</text>
-    </g>
-
-    <g opacity="1">
-      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.56;0.57;0.94;1"/>
-      <text x="36" y="220" fill="#4ADE80">PASS</text>
-      <text x="82" y="220" fill="#CBD5E1">identity.alias</text>
-      <text x="222" y="220" fill="#64748B">-&gt;</text>
-      <text x="252" y="220" fill="#A78BFA" font-weight="700" filter="url(#glow)">PhaseSpider</text>
-    </g>
-
-    <g opacity="1">
-      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.66;0.67;0.94;1"/>
-      <text x="36" y="246" fill="#4ADE80">PASS</text>
-      <text x="82" y="246" fill="#CBD5E1">focus</text>
-      <text x="222" y="246" fill="#64748B">-&gt;</text>
-      <text x="252" y="246" fill="#22D3EE">malware analysis | security automation</text>
-    </g>
-
-    <g opacity="1">
-      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;0.76;0.77;0.94;1"/>
-      <text x="36" y="280" fill="#4ADE80">EXIT</text>
-      <text x="82" y="280" fill="#94A3B8">Analysis complete. Profile ready.</text>
-      <rect x="374" y="267" width="9" height="16" fill="#22D3EE" filter="url(#glow)">
-        <animate attributeName="opacity" dur="0.8s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.48;0.5;1"/>
-      </rect>
-    </g>
-  </g>
-
-  <rect x="3" y="38" width="894" height="268" fill="url(#scanlines)" pointer-events="none"/>
 </svg>
